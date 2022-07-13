@@ -1,0 +1,24 @@
+{%extends "base.html" %}
+{% block title %}bookmark_list{% endblock %}
+ {% block content %}
+    <div id = "content">
+        <h1>Bookmark List</h1>
+        <br>
+        <ul>
+            {% for bookmark in object_list %}
+                <li>
+                    <a href ="{% url 'bookmark:detail' bookmark.id %}">
+                    {{ bookmark.title}}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block footer %}
+<footer class="fixed-bottom bg-info">
+    <div class="text-white font-italic text-right mr-5">
+        Copyright &copy; 2022 DjangoBook by bs lee</div>
+</footer>
+{% endblock %}
